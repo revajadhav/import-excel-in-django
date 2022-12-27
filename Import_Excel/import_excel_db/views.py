@@ -32,7 +32,7 @@ def Import_Excel_pandas(request):
                  
             obj.save()
             query_res = temperature.objects.all()
-        return render(request, 'home.html', {
+        return render(request, 'result.html', {
             'query_res': query_res
         })   
     return render(request, 'home.html')
