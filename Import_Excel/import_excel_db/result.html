@@ -1,0 +1,49 @@
+<html>
+{% block content %}
+<table border="1" >
+    
+    <tr>
+      <th>year</th>
+      <th>jan</th>
+      <th>feb</th>
+      <th>mar</th>
+      <th>apr</th>
+      <th>may</th>
+      <th>jun</th>
+      <th>jul</th>
+      <th>aug</th>
+      <th>sep</th>
+      <th>oct</th>
+      <th>nov</th>
+      <th>dec</th>
+      <th>win</th>
+      <th>spr</th>
+      <th>sum</th>
+      <th>aut</th>
+      <th>ann</th>
+    </tr>
+    {% for item in query_res %}
+    <tr>
+      <td>{{item.year}}</td>
+      <td>{{item.jan}}</td>
+      <td>{{item.feb}}</td>
+      <td>{{item.mar}}</td>
+      <td>{{item.apr}}</td>
+      <td>{{item.may}}</td>
+      <td>{{item.jun}}</td>
+      <td>{{item.jul}}</td>
+      <td>{{item.aug}}</td>
+      <td>{{item.sep}}</td>
+      <td>{{item.oct}}</td>
+      <td>{{item.nov}}</td>
+      <td>{{item.dec}}</td>
+      <td>{{item.win}}</td>
+      <td>{{item.spr}}</td>
+      <td>{{item.sum}}</td>
+      <td>{{item.aut}}</td>
+      <td>{{item.ann}}</td>
+    </tr>
+    {% endfor %}
+  </table>
+  {% endblock %}
+</html>
