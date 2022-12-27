@@ -16,7 +16,13 @@ def Import_Excel_pandas(request):
         fs = FileSystemStorage()
         filename = fs.save(myfile.name, myfile)
         uploaded_file_url = fs.url(filename)              
-        dbframe = pd.read_excel(filename)        
+        df1 = pd.read_excel(filename, sheet_name=('England_Tmax')) 
+        df2= pd.read_excel(filename, sheet_name=('England_Tmin')) 
+        df3= pd.read_excel(filename, sheet_name=('Scotland_Tmax')) 
+        df4= pd.read_excel(filename, sheet_name=('Scotland_Tmin')) 
+        empexceldata = pd.concat([df1, df2, df3, df4])
+
+        dbframe= empexceldata   
         for dbframe in dbframe.itertuples():
             obj = temperature.objects.create(year=dbframe.year,jan=dbframe.jan,feb=dbframe.feb,mar=dbframe.mar,
                                             apr=dbframe.apr,may=dbframe.may,jun=dbframe.jun,jul=dbframe.jul,
